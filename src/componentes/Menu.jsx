@@ -45,7 +45,7 @@ const Menu = () => {
                     <div className="icon-box">
                         <i className="ri-database-2-line"></i>
                         <h3>
-                        <Link to="/equipos" href="">
+                        <Link to="/login/equipos" href="">
                         Equipos  
                         </Link>  
                         

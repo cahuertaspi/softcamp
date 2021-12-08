@@ -5,7 +5,7 @@ const Input =({msg,ph})=>{
 
     return(
         <div>
-        <label for="">{msg}</label>
+        <label class="form-label" for="">{msg}</label>
         <input type="text" name="nombre" id="nombre" placeholder={ph}/>
         </div>
 

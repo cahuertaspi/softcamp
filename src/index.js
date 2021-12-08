@@ -12,7 +12,10 @@ import Retiroequipo from './componentes/Retiroequipo';
 import PaginaMenu from './PaginaMenu';
 import Campeonatos from './Campeonatos';
 import FormNuevoCampeonato from './FormNuevoCampeonato';
-
+import Equipos from './Equipos';
+import FormNuevoEquipo from './FormNuevoEquipo';
+import FormEditarEquipo from './FormEditarEquipo';
+import FormInscripcionEquipo from './FormInscripcionEquipo';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -29,11 +32,11 @@ ReactDOM.render(
         <Route path="/login/campeonatos/editar" element={<FormNuevoCampeonato/>}/>
         <Route path="/login/campeonatos/admision" element={<FormNuevoCampeonato/>}/>
         <Route path="/login/campeonatos/puntajes" element={<FormNuevoCampeonato/>}/>
-        <Route path="/login/equipos" element={<FormNuevoCampeonato/>}/>
-        <Route path="/login/equipos/nuevo" element={<FormNuevoCampeonato/>}/>
-        <Route path="/login/equipos/editar" element={<FormNuevoCampeonato/>}/>
-        <Route path="/login/equipos/inscripcion" element={<FormNuevoCampeonato/>}/>
-        <Route path="/login/equipos/retiro" element={<FormNuevoCampeonato/>}/>
+        <Route path="/login/equipos" element={<Equipos/>}/>
+        <Route path="/login/equipos/nuevo" element={<FormNuevoEquipo/>}/>
+        <Route path="/login/equipos/editar" element={<FormEditarEquipo/>}/>
+        <Route path="/login/equipos/inscripcion" element={<FormInscripcionEquipo/>}/>
+        <Route path="/login/equipos/retiro" element={<FormInscripcionEquipo/>}/>
       </Routes>
     </Router>
 
