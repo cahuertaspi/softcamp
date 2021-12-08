@@ -2,11 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Registro from './Registro';
+import Login from './Login';
+import Jugadores from './Jugadores'
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import Prueba from './Prueba';
+import Retiroequipo from './componentes/Retiroequipo';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<App/>} />
+        <Route path="/registro" element={<Registro/>} />        
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/equipos" element={<Jugadores/>}/>
+        <Route path="/equipos#" element={<Retiroequipo/>}/>
+      </Routes>
+    </Router>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
