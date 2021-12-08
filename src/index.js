@@ -9,6 +9,9 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Prueba from './Prueba';
 import Retiroequipo from './componentes/Retiroequipo';
+import PaginaMenu from './PaginaMenu';
+import Campeonatos from './Campeonatos';
+import FormNuevoCampeonato from './FormNuevoCampeonato';
 
 
 ReactDOM.render(
@@ -20,6 +23,17 @@ ReactDOM.render(
         <Route path="/login" element={<Login/>}/>
         <Route path="/equipos" element={<Jugadores/>}/>
         <Route path="/equipos#" element={<Retiroequipo/>}/>
+        <Route path="/login/menu" element={<PaginaMenu/>}/>
+        <Route path="/login/campeonatos" element={<Campeonatos/>}/>
+        <Route path="/login/campeonatos/nuevo" element={<FormNuevoCampeonato/>}/>
+        <Route path="/login/campeonatos/editar" element={<FormNuevoCampeonato/>}/>
+        <Route path="/login/campeonatos/admision" element={<FormNuevoCampeonato/>}/>
+        <Route path="/login/campeonatos/puntajes" element={<FormNuevoCampeonato/>}/>
+        <Route path="/login/equipos" element={<FormNuevoCampeonato/>}/>
+        <Route path="/login/equipos/nuevo" element={<FormNuevoCampeonato/>}/>
+        <Route path="/login/equipos/editar" element={<FormNuevoCampeonato/>}/>
+        <Route path="/login/equipos/inscripcion" element={<FormNuevoCampeonato/>}/>
+        <Route path="/login/equipos/retiro" element={<FormNuevoCampeonato/>}/>
       </Routes>
     </Router>
 

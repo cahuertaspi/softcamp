@@ -1,4 +1,5 @@
 import React from "react";
+import { Link} from "react-router-dom";
 
 const Footer =()=>{
     return(
@@ -8,15 +9,24 @@ const Footer =()=>{
    <div className="container">
      <div className="row">
 
-       <div className="col-lg-3 col-md-6">
+       <div className="col-lg-12 text-center">
          <div className="footer-info">
-           <h3>SOFTCAMP<span>.</span></h3>
+
+          
+         
+            
+           <Link to="/" className="" style={{color: 'white'}} href="#about">
+            <h3> SOFTCAMP </h3>       
+           </Link>
+           
            <p>
              SOFTBALL <br/>
              Carrera 4 # 15 - 30, Santa Marta<br/><br/>
              <strong>Teléfono:</strong> +1 555 666 777<br/>
              <strong>Email:</strong> campeonatossoftball@softcamp.com<br/>
            </p>
+
+           {/*
            <div className="social-links mt-3">
              <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
              <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
@@ -24,9 +34,12 @@ const Footer =()=>{
              <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a>
              <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
            </div>
+           */}
+
+           
          </div>
        </div>
-
+      {/*
        <div className="col-lg-2 col-md-6 footer-links">
          <h4>Useful Links</h4>
          <ul>
@@ -48,7 +61,8 @@ const Footer =()=>{
            <li><i className="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
          </ul>
        </div>
-
+      
+       
        <div className="col-lg-4 col-md-6 footer-newsletter">
          <h4>Our Newsletter</h4>
          <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
@@ -57,6 +71,8 @@ const Footer =()=>{
          </form>
 
        </div>
+       */}
+      
 
      </div>
    </div>

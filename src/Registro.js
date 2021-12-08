@@ -1,4 +1,5 @@
 import { Link} from "react-router-dom";
+import Footer from "./componentes/Footer";
 function Registro(){
     return(
         <div>       
@@ -42,9 +43,12 @@ function Registro(){
                                                 </div>
                                             </div>
                                             <div className="text-center">
-                                            <a className="get-started-btn" href="login.html" >
+                                            
+                                            
+                                            <a className="get-started-btn" style={{backgroundColor:"#ffc451"}} href="login.html" >
                                                 Registrar cuenta
                                             </a>
+                                            
                                             </div>
                                             <hr/>
                                             
@@ -67,6 +71,7 @@ function Registro(){
                 </div>
                 </div>
                 </div>
+                <Footer/>
             </body>
         </div>
     );

@@ -1,4 +1,5 @@
 import { Link} from "react-router-dom";
+import Footer from "./componentes/Footer";
 function Login(){
     return(
         <div>
@@ -30,14 +31,15 @@ function Login(){
                                                     <div className="form-group">
                                                         <div className="custom-control custom-checkbox small" className="text-center">
                                                             <input type="checkbox" className="custom-control-input" id="customCheck"/>
-                                                            <label style={{color:'white'}} className="custom-control-label" for="customCheck">
+                                                            <label style={{color:'black'}} className="custom-control-label" for="customCheck">
                                                                 Recuerdame</label>
                                                         </div>
                                                     </div>
                                                     <div className="text-center">
-                                                    <a href="index.html" className="get-started-btn">
-                                                        Login
-                                                    </a>
+                                                        <Link to="/login/menu" className="get-started-btn" style={{backgroundColor:"#ffc451"}}>
+                                                            Login
+                                                        </Link>
+                                                    
                                                     </div>
                                                     <hr/>
                                                 
@@ -60,6 +62,7 @@ function Login(){
                     </div>
                 </div>     
             </body>
+            <Footer/>
         </div>
     );
 }
