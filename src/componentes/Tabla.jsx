@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Tabla = () => {
     return(
@@ -15,10 +16,13 @@ const Tabla = () => {
                 <tr>
                 <th scope="row">Campeonato 1</th>
                 <td className="text-center"> 
-                    <button className="get-started-btn" style={{backgroundColor:"#F5CE00"}} type="button">Editar</button>
+                    <Link  to="/login/campeonatos/editar" className="get-started-btn" style={{backgroundColor:"#F5CE00"}} type="button">Editar</Link>
                     <button className="get-started-btn" style={{backgroundColor:"#F5CE00"}} type="button">Eliminar</button>
                     <button className="get-started-btn" style={{backgroundColor:"#F5CE00"}} type="button">Cancelar</button>
-                    <button className="get-started-btn" style={{backgroundColor:"#F5CE00"}} type="button">Admision</button> 
+                    <Link  to="/login/campeonatos/admision" className="get-started-btn" style={{backgroundColor:"#F5CE00"}} type="button">Admision</Link>
+                    <Link  to="/login/campeonatos/tablaposiciones" className="get-started-btn" style={{backgroundColor:"#F5CE00"}} type="button">Tabla posiciones</Link>
+
+                    
                 </td>
  
                 </tr>
