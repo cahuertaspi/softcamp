@@ -16,6 +16,11 @@ import Equipos from './Equipos';
 import FormNuevoEquipo from './FormNuevoEquipo';
 import FormEditarEquipo from './FormEditarEquipo';
 import FormInscripcionEquipo from './FormInscripcionEquipo';
+import FormEditarCampeonato from './FormEditarCampeonato';
+import FormAdmisionesCampeonato from './FormAdmisionesCampeonato';
+import FormPuntajeCampeonato from './FormPuntajeCampeonato';
+import TablaPosicion from './TablaPosicion';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -29,9 +34,10 @@ ReactDOM.render(
         <Route path="/login/menu" element={<PaginaMenu/>}/>
         <Route path="/login/campeonatos" element={<Campeonatos/>}/>
         <Route path="/login/campeonatos/nuevo" element={<FormNuevoCampeonato/>}/>
-        <Route path="/login/campeonatos/editar" element={<FormNuevoCampeonato/>}/>
-        <Route path="/login/campeonatos/admision" element={<FormNuevoCampeonato/>}/>
-        <Route path="/login/campeonatos/puntajes" element={<FormNuevoCampeonato/>}/>
+        <Route path="/login/campeonatos/editar" element={<FormEditarCampeonato/>}/>
+        <Route path="/login/campeonatos/admision" element={<FormAdmisionesCampeonato/>}/>
+        <Route path="/login/campeonatos/puntajes" element={<FormPuntajeCampeonato/>}/>
+        <Route path="/login/campeonatos/tablaposiciones" element={<TablaPosicion/>}/>
         <Route path="/login/equipos" element={<Equipos/>}/>
         <Route path="/login/equipos/nuevo" element={<FormNuevoEquipo/>}/>
         <Route path="/login/equipos/editar" element={<FormEditarEquipo/>}/>

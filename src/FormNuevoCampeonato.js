@@ -2,7 +2,7 @@ import FormCampeonato from "./componentes/FormCampeonato"
 
 function FormNuevoCampeonato() {
     return(
-        <FormCampeonato />
+        <FormCampeonato titulo={`Nuevo Campeonato`} />
     )
   }
 
