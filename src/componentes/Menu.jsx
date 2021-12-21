@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Menu = () => {
+const Menu = ({opcioncentro}) => {
     const extraciondatos = JSON.parse(localStorage.getItem('datos'));
 
     function salir() {
@@ -30,7 +30,7 @@ const Menu = () => {
                 <div className="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
                     <div className="col-xl-6 col-lg-8">
                     <h1>Menu</h1>
-                    <h2>Seleccione una opcion</h2>
+                    <h2>Seleccione una opción:</h2>
                     </div>
                 </div>
             
@@ -52,7 +52,7 @@ const Menu = () => {
                     <div className="col-xl-2 col-md-4">
                     <div className="icon-box">
                         <i className="ri-calendar-todo-line"></i>
-                        <h3><a href="">Asesoramiento</a></h3>
+                        <h3><a href="">{opcioncentro}</a></h3>
                     </div>
                     </div>
                     <div className="col-xl-2 col-md-4">
@@ -76,9 +76,7 @@ const Menu = () => {
 
                 <div className="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
 
-                    <Link to="/">
-                        <h2>Salir</h2>
-                    </Link>
+                   
                     
                 </div>
             

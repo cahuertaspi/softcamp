@@ -3,7 +3,7 @@ import Menu from "./componentes/Menu";
 
 function PaginaMenu() {
     return(
-        <Menu opcioncentro={`Asesoramiento`}/>
+        <Menu opcioncentro={`Gestión de usuarios`}/>
     )
 }
 

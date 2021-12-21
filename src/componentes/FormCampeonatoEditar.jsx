@@ -1,8 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {useRef, useState} from 'react'
+import {useRef, useState, useEffect} from 'react'
 
 const FormCampeonato = (props) => {
+
+  
+
+    const [listado,setListado]= useState([]);  
+    
+    useEffect(()=>{
+        const extraciondatos = JSON.parse(localStorage.getItem('datos'));
+        fetch("http://localhost:4000/championships/",{
+
+            headers: {"content-type": "application/json",
+                      "Authorization":`Bearer ${extraciondatos.token}`},
+            method:"GET"
+        })
+        .then(res=> res.json())       
+        .then(res=> {
+            console.log(res);
+
+            setListado(res);
+        })
+    },[])
+    
+
+
     const placeref = useRef();
     const dateref = useRef();
     const numberOfTeamsref = useRef();
@@ -14,7 +37,7 @@ const FormCampeonato = (props) => {
     const [error, setError] = useState();
     const [msgerror, setMsgerror] = useState();
 
-    function guardar(){
+    function editar(){    
 
         
 
@@ -33,8 +56,8 @@ const FormCampeonato = (props) => {
               "content-type": "application/json",
               "Authorization":`Bearer ${extraciondatos.token}`
             },
-            method: "POST",
-            body: JSON.stringify({place, date, numberOfTeams, name, prize, status})})
+            method: "PUT",
+            body: JSON.stringify({ place, date, numberOfTeams, name, prize, status})})
             .then(res => res.json())
             .then(res => {
                 if(res.status !== undefined){
@@ -56,7 +79,7 @@ const FormCampeonato = (props) => {
             <h3 className="text-center">{props.titulo} </h3>
             <div className="mb-3">
                 <label for="name" className="form-label">Nombre del campeonato: </label>
-                <input type="text" className="form-control" id="namecampeonato" placeholder="Indique el nombre del campeonato" ref={nameref}/>
+                <input type="text" className="form-control" id="namecampeonato" placeholder={listado.name} ref={nameref}/>
             </div>
             <div className="mb-3">
                 <label for="lugar" className="form-label">Lugar</label>
@@ -96,7 +119,7 @@ const FormCampeonato = (props) => {
                 <Link to="/login/campeonatos" className="btn btn-danger" type="button">Volver</Link>
             </div>
             <div className="col-6">
-                <button className="btn btn-success" type="button" onClick={guardar}>Guardar</button>
+                <button className="btn btn-success" type="button" onClick={editar}>Guardar</button>
             </div>
             
         </div>

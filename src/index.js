@@ -20,6 +20,7 @@ import FormEditarCampeonato from './FormEditarCampeonato';
 import FormAdmisionesCampeonato from './FormAdmisionesCampeonato';
 import FormPuntajeCampeonato from './FormPuntajeCampeonato';
 import TablaPosicion from './TablaPosicion';
+import Menuadmin from './Menuadmin';
 
 
 ReactDOM.render(
@@ -32,6 +33,7 @@ ReactDOM.render(
         <Route path="/equipos" element={<Jugadores/>}/>
         <Route path="/equipos#" element={<Retiroequipo/>}/>
         <Route path="/login/menu" element={<PaginaMenu/>}/>
+        <Route path="/login/admin" element={<Menuadmin/>}/>
         <Route path="/login/campeonatos" element={<Campeonatos/>}/>
         <Route path="/login/campeonatos/nuevo" element={<FormNuevoCampeonato/>}/>
         <Route path="/login/campeonatos/editar" element={<FormEditarCampeonato/>}/>

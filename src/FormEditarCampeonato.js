@@ -1,8 +1,8 @@
-import FormCampeonato from "./componentes/FormCampeonato"
+import FormCampeonatoEditar from "./componentes/FormCampeonatoEditar"
 
 function FormEditarCampeonato() {
     return(
-        <FormCampeonato titulo={`Editar Campeonato`} />
+        <FormCampeonatoEditar titulo={`Editar Campeonato`} />
     )
   }
 

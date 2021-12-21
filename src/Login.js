@@ -25,15 +25,24 @@ function Login(){
             .then(res => res.json())
             .then(res => {
                 console.log(res.token);
-                if(res.token !== undefined){
+                if(res.token !== undefined){                  
                     console.log("entro");
+                    
                     if(localStorage.getItem('datos')){
-                        console.log("me fui pro si");
-                        {window.location.href="login/menu"}
+                        if(res.type==='admin'){
+                            {window.location.href="login/admin"}
+                             console.log("voy a mostrar admin")
+                        }
+                        else {window.location.href="login/menu"}                      
+                   
                     } else {
-                        console.log("me fui pro no");
-                        localStorage.setItem("datos", JSON.stringify(res));
-                        {window.location.href="login/menu"}
+                       console.log("me fui pro no");
+                       localStorage.setItem("datos", JSON.stringify(res));
+                       if(res.type==='admin'){
+                        {window.location.href="login/admin"}
+                         console.log("voy a mostrar admin")
+                        }
+                        else {window.location.href="login/menu"}     
                     }
                     
                 }else{
