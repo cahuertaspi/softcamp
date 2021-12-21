@@ -1,6 +1,51 @@
 import { Link} from "react-router-dom";
 import Footer from "./componentes/Footer";
+import React from 'react'
+import {useRef, useState} from 'react'
 function Login(){
+
+    const emailref = useRef();
+    const passwordref = useRef();
+    const [error, setError] = useState();
+    const [msgerror, setMsgerror] = useState();
+    //para enviar la peticiones
+    //"Authorization": `Bearer ${token}`
+
+    function logeo(){
+        const email = emailref.current.value;
+        const password = passwordref.current.value;
+        //const rol = rolref.current.value;
+        fetch("http://localhost:4000/users/login", {
+            headers: {
+                        "content-type": "application/json",
+                        
+                     },
+            method: "POST",
+            body: JSON.stringify({email,password})})
+            .then(res => res.json())
+            .then(res => {
+                console.log(res.token);
+                if(res.token !== undefined){
+                    console.log("entro");
+                    if(localStorage.getItem('datos')){
+                        console.log("me fui pro si");
+                        {window.location.href="login/menu"}
+                    } else {
+                        console.log("me fui pro no");
+                        localStorage.setItem("datos", JSON.stringify(res));
+                        {window.location.href="login/menu"}
+                    }
+                    
+                }else{
+                    
+                    setError(true);
+                    setMsgerror(res.msg);                
+                }
+            }) 
+    }
+
+
+
     return(
         <div>
             <body className="bg-gradient-primary">
@@ -21,12 +66,12 @@ function Login(){
                                                 <form className="user">
                                                     <div className="form-group">
                                                         <input type="email" className="form-control form-control-user"
-                                                            id="exampleInputEmail" aria-describedby="emailHelp"
+                                                            id="exampleInputEmail" ref={emailref} aria-describedby="emailHelp"
                                                             placeholder="Ingresa tu dirección de correo electrónico..."/>
                                                     </div>
                                                     <div className="form-group">
                                                         <input type="password" className="form-control form-control-user"
-                                                            id="exampleInputPassword" placeholder="Contraseña"/>
+                                                            id="exampleInputPassword" ref={passwordref} placeholder="Contraseña"/>
                                                     </div>
                                                     <div className="form-group">
                                                         <div className="custom-control custom-checkbox small" className="text-center">
@@ -36,10 +81,8 @@ function Login(){
                                                         </div>
                                                     </div>
                                                     <div className="text-center">
-                                                        <Link to="/login/menu" className="get-started-btn" style={{backgroundColor:"#ffc451"}}>
-                                                            Login
-                                                        </Link>
-                                                    
+                                                        <button type="button" className="get-started-btn" style={{backgroundColor:"#ffc451"}} onClick={logeo}>Ingresar</button>
+                                                        
                                                     </div>
                                                     <hr/>
                                                 
